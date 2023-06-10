@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row">
+        <span class="display-5">ADD CATEGORY</span>
+    </div>
+    <div class="row">
+        <mat-card>
+            <form action="" class="example-form" [formGroup]="adddata">
+                <div class="row">
+                <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label> ADD TITLE</mat-label>
+                        <input type="text" matInput formControlName="title" placeholder="Add title">
+                </mat-form-field >
+                <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>ADD DESCRIPTION</mat-label>
+                        <textarea matInput formControlName="description" placeholder="Add description"></textarea>
+                </mat-form-field>
+                <div class="col-md-3">
+                    <button mat-flat-button color="primary" (click)="addcategory(adddata)">ADD CATEGORY</button>
+                </div>
+            </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

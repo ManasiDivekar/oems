@@ -1,0 +1,106 @@
+<div class="bootstrap-wrapper" *ngIf="!isSubmited">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="row my-3">
+                <marquee behavior="" direction="left"><h1 class=" text-secondary text-danger">ATTEMPT ALL THE QUESTIONS PROVIDED. </h1></marquee>
+            </div>
+            <div class="col-md-2 my-3">
+                <mat-card class="">
+                    <h1>Instructions</h1>
+                    <mat-card-content>
+                        <ul>
+                            <li>keep your face in front of camera.</li>
+                            <hr>
+                            <li>Do not refresh the page otherwise you will get new questions.</li>
+                            <hr>
+                            <li>Do not switch the tabs.</li>
+                            <hr>
+                            <li>do not minimize the window.</li>
+                        </ul>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-md-8" *ngIf="allquestion" Class="">
+                <h1 class="text-success"><mat-icon>quiz</mat-icon> {{allquestion[0].quiz.title}} </h1>
+                <mat-card *ngFor="let a of allquestion , let i = index" class="my-3">
+                    <mat-card-content>
+                        <span class="h5">Question{{i+1}} : {{a.content}} </span>
+                    </mat-card-content>
+                    <mat-card-content>
+                        <mat-radio-group >
+                            <div class="row">
+                                <div class="col-md-6 my-4">
+                                    <mat-radio-button class="mx-2 my-4" [name]="a.option1" ngDefaultControl  [value]="a.option1" [(ngModel)]="a.givenAnswer">
+                                        <span class="h5">A) : {{a.option1}}</span>
+                                    </mat-radio-button>
+                                    <!-- <input type="radio" class="mx-3" [name]="a.option1" [value]="a.option1"
+                                        [(ngModel)]="a.givenAnswer"><span class="h5">A) : {{a.option1}}</span> -->
+                                </div>
+                                <div class="col-md-6 my-4">
+                                    <mat-radio-button class="mx-2 my-4" ngDefaultControl [value]="a.option2" [(ngModel)]="a.givenAnswer">
+                                        <span class="h5">B) : {{a.option2}}</span>
+                                    </mat-radio-button>
+                                    <!-- <input type="radio" class="mx-3" [name]="a.option2" [value]="a.option2"
+                                        [(ngModel)]="a.givenAnswer"><span class="h5">B) : {{a.option2}}</span> -->
+
+                                </div>
+                                <div class="col-md-6 my-4">
+                                    <mat-radio-button class="mx-2 my-4" [name]="a.option3" ngDefaultControl [value]="a.option3" [(ngModel)]="a.givenAnswer">
+                                    <span class="h5">C) : {{a.option3}}</span>
+                                </mat-radio-button>
+                                    <!-- <input type="radio" class="mx-3" [name]="a.option3" [value]="a.option3"
+                                        [(ngModel)]="a.givenAnswer"><span class="h5">C) : {{a.option3}}</span> -->
+
+                                </div>
+                                <div class="col-md-6 my-4">
+                                    <mat-radio-button class="mx-2 my-4" [name]="a.option4" ngDefaultControl [value]="a.option4" [(ngModel)]="a.givenAnswer">
+                                    <span class="h5">D) : {{a.option4}}</span>
+                                </mat-radio-button>
+                                    <!-- <input type="radio" class="mx-3" [name]="a.option4" [value]="a.option4"
+                                        [(ngModel)]="a.givenAnswer"><span class="h5">D) : {{a.option4}}</span> -->
+
+                                </div>
+                            </div>
+                        </mat-radio-group>
+                        <!-- <h2>selected answer : {{selectans}} </h2> -->
+                    </mat-card-content>
+                </mat-card>
+                <button class="m-3" mat-flat-button color="primary" (click)="quizsubmit()">SUBMIT EXAM</button>
+            </div>
+            <div class="col-md-2 my-3">
+                <mat-card class="">
+                    <mat-card-title class="text-center text-primary">PROGRESS</mat-card-title>
+                    <mat-card-content class="text-center ">
+                        <h2 class="mauto"> {{getFormatedTime()}} </h2>
+                        <mat-spinner mode="determinate" [value]="(timer/(this.allquestion.length * (1/2) * 60))*100" class="mx-auto"> </mat-spinner>
+                    </mat-card-content>
+                    <mat-card-subtitle>
+                        <h2>Exam will get submitted automatically as the time become <b class="text-danger">0:0</b></h2>
+                    </mat-card-subtitle>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bootstrap-wrapper" *ngIf="isSubmited">
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <mat-card class="my-4">
+                        <mat-card-title> <h1 class="text-primary text-center">EXAM RESULT</h1> </mat-card-title>
+                    <mat-card-content class="text-center">
+                        <h3 class="text-info">Marks Got : <b>{{marksGot}}</b></h3>
+                        <h3 class="text-success">Carrect Answer : <b>{{correctAnswers}}</b></h3>
+                        <h3 class="text-warning ">Attempt Question : <b>{{attempted}}</b></h3>
+                    </mat-card-content>
+                    <mat-card-actions class="text-center">
+                        <button mat-flat-button class="mx-2" color="warn" (click)="printpage()">PRINT</button>
+                        <button mat-flat-button class="mx-2" color="primary" [routerLink]="['/user']">HOME</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+</div>

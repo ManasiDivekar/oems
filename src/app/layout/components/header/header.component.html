@@ -1,0 +1,13 @@
+
+    <mat-toolbar class="header">
+        <a href=""><img class="logo" src="https://d1myhw8pp24x4f.cloudfront.net/software_logo/1495539705_followclass-192.png" alt=""></a>
+        <span class="h3 text-secondary">Exam Management</span>
+        <span class="example-spacer"></span>
+        <a href="home" mat-icon-button><mat-icon class="text-dark">home</mat-icon></a>
+        <a *ngIf="!loggedInUser"  routerLink="signin" class="h5 text-decoration-none text-secondary m-3" mat-basic-button >SignIn</a>
+        <a *ngIf="!loggedInUser" routerLink="signup" class="h5 text-decoration-none text-secondary m-3" mat-basic-button >SignUp</a>
+        <a *ngIf="loggedInUser && userstr" [routerLink]="['/admin/profile']" class="h5 text-decoration-none text-secondary m-3" mat-fab color="basic"><mat-icon>person</mat-icon></a>
+        <a *ngIf="loggedInUser" (click)="logout()" class="h5 text-decoration-none text-secondary m-3" mat-basic-button >Signout</a>
+    </mat-toolbar>    
+
+

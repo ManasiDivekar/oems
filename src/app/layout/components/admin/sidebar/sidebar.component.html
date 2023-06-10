@@ -1,0 +1,13 @@
+<mat-sidenav-container class="sidenav">
+    <mat-sidenav opened="true" >
+      <mat-nav-list class="sidenav">
+        <mat-list-item> <mat-icon>home</mat-icon><a routerLink="home" > HOME</a></mat-list-item>
+        <mat-list-item> <mat-icon>account_circle</mat-icon><a routerLink="profile" >PROFILE</a></mat-list-item>
+        <mat-list-item><mat-icon>list</mat-icon><a routerLink="category">CATEGORIES</a></mat-list-item>
+        <mat-list-item><mat-icon>add_circle_outline</mat-icon><a routerLink="addcategory">ADD CATEGORY</a></mat-list-item>
+        <mat-list-item><mat-icon>add_to_photos</mat-icon><a routerLink="allquize">QUIZES</a></mat-list-item>
+        <mat-list-item><mat-icon>add</mat-icon><a routerLink="addquize">ADD QUIZES</a></mat-list-item>
+        <mat-list-item><mat-icon>logout</mat-icon><a (click)="logout()">LOGOUT</a></mat-list-item>
+      </mat-nav-list>
+      </mat-sidenav>
+  </mat-sidenav-container>

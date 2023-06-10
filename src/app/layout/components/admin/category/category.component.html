@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+        <span class="display-6 my-4">All Categories</span>
+        <div class="col-md-3">
+        <a routerLink="/admin/addcategory" mat-flat-button color="primary">ADD CATEGORY</a>
+        </div>
+        <mat-card class="my-3" *ngFor="let a of allcategory">
+            <div class="row" >
+                  <div class="col-md-10">
+                    <mat-icon>category</mat-icon>
+                    <h3><span >CategoryId :</span> {{a.category_id}}</h3>
+                   <h4><span>Title :</span> {{a.title |uppercase}}</h4>
+                  <h4><span>Description :</span> {{a.description}}</h4>
+                  </div>
+                  <div class="col-md-2">
+                    <button  mat-flat-button><mat-icon (click)="deletecat(a.category_id)">delete</mat-icon></button>
+                    <button  mat-flat-button [routerLink]="['/admin/updatecategory/',a.category_id]" ><mat-icon>edit</mat-icon></button>
+                  </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

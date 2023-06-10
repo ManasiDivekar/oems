@@ -1,0 +1,24 @@
+<h1 class="my-3">ALL QUESTIONS OF <span class="text-warning">{{quiztitle |uppercase}}</span> </h1>
+<button mat-flat-button class=" mx-2 my-3" color="primary" [routerLink]="['/admin/addquestion/',quizid,quiztitle]"  >Add Question</button>
+<mat-card *ngFor="let a of allquestion" class="my-3">
+<mat-card-content>
+    <mat-icon>square_bullet</mat-icon> <span class="h5">Question : {{a.content}} </span>
+</mat-card-content>
+    <mat-card-content>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>A) : {{a.option1}}</h3>
+                <h3>B) : {{a.option2}} </h3>
+            </div>
+            <div class="col-md-6">
+                <h3>C) : {{a.option3}} </h3>
+                <h3>D) : {{a.option4}} </h3>
+            </div>
+            <h3>Correct Answer :{{a.answer}} </h3>
+        </div>
+    </mat-card-content>
+<mat-card-footer>
+    <button mat-flat-button class="mx-2 my-3" color="primary" [routerLink]="['/admin/updatequestion/',a.question_id]">UPDATE</button>
+    <button mat-flat-button class="mx-2 my-3" color="warn" (click)="deleteque(a.question_id)" >DELETE</button>
+</mat-card-footer>
+</mat-card>

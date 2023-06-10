@@ -1,0 +1,36 @@
+<div class="row my-3">
+<span class="display-6">ADD QUIZE</span>
+</div>
+<mat-card>
+    <form action="" (ngsubmit)="addquizedata">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label class="h6">TITLE:</mat-label>
+            <input type="text" matInput name="title" [(ngModel)]="addquizedata.title" placeholder="Title">
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label class="h6">DESCRIPTION:</mat-label>
+            <input type="text" matInput name="description" [(ngModel)]="addquizedata.description" placeholder="description">
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label class="h6">MAX MARKS:</mat-label>
+            <input type="text" matInput name="maxMarks" [(ngModel)]="addquizedata.maxMarks" placeholder="max-marks">
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label class="h6">NO OF QUESTIONS:</mat-label>
+            <input type="text" matInput name="numberOfQuestions" [(ngModel)]="addquizedata.numberOfQuestions" placeholder="no of questions.">
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label class="h6">Category</mat-label>
+            <mat-select name="category" [(ngModel)]="addquizedata.category.category_id">
+              <mat-option *ngFor="let c of quizcat" [value]="c.category_id">{{c.title}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+            <mat-slide-toggle MatSlideToggle name="active" [(ngModel)]="addquizedata.active" color="primary"> Status</mat-slide-toggle>
+            <div class="row my-3">
+                <div class="col-md-3">
+                    <button type="submit" mat-flat-button color="primary" (click)="savedata()">ADD QUIZE</button>
+                </div>
+            </div>
+    </form>
+</mat-card>

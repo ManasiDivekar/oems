@@ -1,0 +1,18 @@
+.container-fluid{
+    height: 100vh;
+    background-image: conic-gradient(rgba(109, 179, 176, 0.719) , rgba(184, 225, 243, 0.815),rgb(230, 212, 239),rgba(153, 174, 232, 0.801),rgba(186, 129, 184, 0.861));
+}
+.card-sec{
+margin-top: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgba(159, 200, 202, 0.648);
+border-radius: 0 40px;
+border: 2px solid cadetblue;
+}
+.card{
+height: 400px;
+width:500px;
+margin: 20px;
+}

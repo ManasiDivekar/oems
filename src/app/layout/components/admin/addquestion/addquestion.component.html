@@ -1,0 +1,65 @@
+<mat-card>
+    <h1>ADD QUESTION</h1>
+    <form>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Content:</mat-label>
+            <input type="text" matInput [(ngModel)]="staticaddque.content" name="content">
+        </mat-form-field>
+        <!-- <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Image:</mat-label>
+            <input type="text" matInput [(ngModel)]="staticaddque.image" name="image" formControlName="image">
+        </mat-form-field> -->
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Option1:</mat-label>
+                    <input type="text" [(ngModel)]="staticaddque.option1" name="option1" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Option2:</mat-label>
+                    <input type="text" [(ngModel)]="staticaddque.option2" name="option2" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Option3:</mat-label>
+                    <input type="text" [(ngModel)]="staticaddque.option3" name="option3" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Option4:</mat-label>
+                    <input type="text" [(ngModel)]="staticaddque.option4" name="option4" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Answer:</mat-label>
+            <mat-select matInput [(ngModel)]="staticaddque.answer" name="answer">
+                <mat-option *ngIf="staticaddque.option1" [value]="staticaddque.option1"> {{staticaddque.option1}}
+                </mat-option>
+                <mat-option *ngIf="staticaddque.option2" [value]="staticaddque.option2"> {{staticaddque.option2}}
+                </mat-option>
+                <mat-option *ngIf="staticaddque.option3" [value]="staticaddque.option3"> {{staticaddque.option3}}
+                </mat-option>
+                <mat-option *ngIf="staticaddque.option4" [value]="staticaddque.option4"> {{staticaddque.option4}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <!-- <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Given Answer:</mat-label>
+            <input type="text" matInput formControlName="givenAnswer">
+        </mat-form-field> -->
+        <!-- <mat-form-field formGroupName="quiz" class="full-width" appearance="fill">
+            <mat-label>Quiz</mat-label>
+            <mat-select formControlName="quiz_id">
+                <mat-option [value]="a.quiz_id" *ngFor="let a of allquize">
+               {{a.title}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+        <button mat-flat-button color="primary" class="my-3" (click)="savequestion()">ADD QUESTION</button>
+    </form>
+</mat-card>

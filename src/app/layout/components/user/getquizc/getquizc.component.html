@@ -1,0 +1,17 @@
+<h1 class=" text-secondary my-3">ALL QUIZZES </h1>
+<mat-card *ngFor="let a of quizcat" class="my-3">
+    <mat-card-header>
+        <mat-icon></mat-icon>
+        <span class="h3 my-1">{{a.title}}</span>
+    </mat-card-header>
+    <mat-card-content>
+        <h2 class="p-0">{{a.description}}</h2>
+    </mat-card-content>
+    <mat-card-footer>
+        <div class="row">
+            <div class="col-md-2 my-3 mx-2"><a [routerLink]="['/user/rules',a.quiz_id]" mat-flat-button color="primary">start</a> </div>
+            <div class="col-md-3"><mat-card class=""><h4><span class="">Max Marks : {{a.maxMarks}}</span> </h4></mat-card></div>
+            <div class="col-md-3"><mat-card><h4><span>Total number of questions : {{a.numberOfQuestions}}</span></h4></mat-card></div>
+        </div>
+    </mat-card-footer>
+</mat-card>

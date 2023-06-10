@@ -1,0 +1,25 @@
+<div class="container-fluid">
+        <mat-card>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <mat-card>
+                        <mat-card-header class="head">
+                         <!-- <img src="{{userdata.profile}}" class="d-block mx-auto" height="200px" width="200px" alt=""> -->
+                         <img src="./assets/media/usericon.png" class="d-block mx-auto" height="200px" width="200px" alt="">
+                        </mat-card-header><hr>
+                        <mat-card-content class="body">
+                           <div class="row d-flex justify-content-center">
+                             <mat-label class="my-2"><span class="h4">ID :</span> <span class="h5">{{userdata.id}}</span></mat-label><br> 
+                             <mat-label class="my-2"><span class="h4">USERNAME :</span> <span class="h5">{{userdata.username}}</span></mat-label> <br> 
+                             <mat-label class="my-2"><span class="h4">FIRSTNAME :</span> <span class="h5">{{userdata.firstname}}</span></mat-label> <br> 
+                             <mat-label class="my-2"><span class="h4">LASTNAME :</span> <span class="h5">{{userdata.lastname}}</span></mat-label>  <br>
+                             <mat-label class="my-2"><span class="h4">EMAIL :</span> <span class="h5">{{userdata.email}}</span> </mat-label> <br>
+                             <mat-label class="my-2"><span class="h4">PHONE :</span> <span class="h5">{{userdata.phone}}</span></mat-label> <br> 
+                             <mat-label class="my-2"><span class="h4">AUTHORITY :</span> <span class="h5">{{userdata.authorities[0].authority}}</span></mat-label> <br> 
+                           </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-card>
+</div>

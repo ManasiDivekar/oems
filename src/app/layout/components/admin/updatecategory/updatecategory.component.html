@@ -1,0 +1,29 @@
+
+<div class="container-fluid">
+    <div class="row my-3">
+        <span class="display-5">UPDATE CATEGORY <span class="text-warning ">{{title.title|uppercase}}</span></span>
+    </div>
+    <div class="row">
+        <mat-card>
+            <form action="" class="example-form" [formGroup]="updatedata">
+                <div class="row">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>ID</mat-label>
+                        <input type="text" matInput formControlName="category_id" placeholder="Add id">
+                </mat-form-field >
+                <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>TITLE</mat-label>
+                        <input type="text" matInput formControlName="title" placeholder="Add title">
+                </mat-form-field >
+                <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>DESCRIPTION</mat-label>
+                        <textarea matInput formControlName="description" placeholder="Add description"></textarea>
+                </mat-form-field>
+                <div class="col-md-3">
+                    <button mat-flat-button color="primary" (click)="updatecategory(updatedata)" >UPDATE CATEGORY</button>
+                </div>
+            </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

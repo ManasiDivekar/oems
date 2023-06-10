@@ -1,0 +1,9 @@
+.container-fluid{
+    display: flex;
+    justify-content: center;
+}
+span{
+    margin-top: 80px;
+    font-weight: bolder;
+    text-shadow: 9px 4px 3px rgb(208, 204, 204) ;
+}

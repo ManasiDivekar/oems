@@ -1,0 +1,12 @@
+.header{
+    height: 80px;
+    background-color:rgba(200, 207, 219, 0.705);
+    box-shadow: 8px 10px 18px rgb(185, 181, 181);
+}
+.logo{
+    height: 80px;
+    width: 80px;
+}
+.example-spacer{
+    flex: 1 1 auto;
+}

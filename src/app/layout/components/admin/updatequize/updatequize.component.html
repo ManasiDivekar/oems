@@ -1,0 +1,40 @@
+<div class="row my-3">
+<span class="display-6">UPDATE QUIZES <span class="text-warning">{{title.title|uppercase}}</span> </span>
+</div>
+<mat-card>
+    <form action="" [formGroup]="updatedata">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label class="h6">QUIZ ID:</mat-label>
+            <input type="text" matInput formControlName="quiz_id" placeholder="Title">
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label class="h6">TITLE:</mat-label>
+            <input type="text" matInput formControlName="title" placeholder="Title">
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label class="h6">DESCRIPTION:</mat-label>
+            <input type="text" matInput formControlName="description" placeholder="description">
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label class="h6">MAX MARKS:</mat-label>
+            <input type="text" matInput formControlName="maxMarks" placeholder="max-marks">
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label class="h6">NO OF QUESTIONS:</mat-label>
+            <input type="text" matInput formControlName="numberOfQuestions" placeholder="no of questions.">
+        </mat-form-field>
+        <mat-form-field class="full-width" formGroupName="category" appearance="fill">
+            <mat-label class="h6">Category</mat-label>
+            <mat-select  formControlName="category_id">
+              <mat-option *ngFor="let c of quizcat" [value]="c.category_id">{{c.title}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+            <mat-slide-toggle MatSlideToggle formControlName="active" color="primary"> Status</mat-slide-toggle>
+            <div class="row my-3">
+                <div class="col-md-3">
+                    <button mat-flat-button color="primary" (click)="updatequize(updatedata)">UPDATE QUIZE</button>
+                </div>
+            </div>
+    </form>
+</mat-card>

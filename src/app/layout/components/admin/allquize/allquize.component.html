@@ -1,0 +1,21 @@
+<div class="row my-3">
+<span class=" display-5 text-secondary">ALL QUIZZES!</span>
+</div>
+<mat-card *ngFor="let a of allquize" class="my-3">
+    <mat-card-header>
+        <mat-icon>square_bullet</mat-icon>
+        <span class="h3 my-1">  {{a.title | uppercase }}</span>
+    </mat-card-header>
+    <mat-card-content>
+        <h2 class="p-0">  {{a.description}}</h2>
+    </mat-card-content>
+    <mat-card-footer>
+        <div class="row">
+            <div class="col-md-2 mx-4"><button mat-flat-button class="my-3" color="primary" [routerLink]="['/admin/allquestion/',a.quiz_id,a.title]" >All Question</button>  </div>
+            <div class="col-md-2"><mat-card class=""><h4><span class="">Max Marks :</span> {{a.maxMarks}} </h4></mat-card></div>
+            <div class="col-md-3"><mat-card><h4><span>Total number of questions :</span> {{a.numberOfQuestions}}</h4></mat-card></div>
+            <div class="col-md-2"><button mat-flat-button class="my-3" color="primary" [routerLink]="['/admin/updatequize/',a.quiz_id]" >update quiz</button></div>
+            <div class="col-md-2"><button mat-flat-button class="my-3" color="warn" (click)="quizedelte(a.quiz_id)">delete quiz</button></div>
+        </div>
+    </mat-card-footer>
+</mat-card>

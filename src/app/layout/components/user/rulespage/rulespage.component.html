@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card class="mt-20">
+                <mat-card-header>
+                    <mat-card-title>
+                        <h2>Read the instructions of this page carefully.</h2>
+                    </mat-card-title>
+                    <mat-card-subtitle>One Step More To Go</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="ml-20">
+                    <h1>{{quizcontent.title}}</h1>
+                    <p class="h5"> {{quizcontent.description}}  </p>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <h1 class="text-danger">Important Instructions</h1>
+                    <ul>
+                        <li>This quiz is only for Exam purpose.</li>
+                        <li>Read carefully all questions and give answer.</li>
+                        <li>You have to submit quiz in <b>   {{quizcontent.numberOfQuestions}} * 30 seconds.</b></li>
+                        <li>You can attempt the quiz any number of time.</li>
+                        <li>There are {{quizcontent.numberOfQuestions}} questions in this quiz.</li>
+                        <li>Each questions carries <b> {{quizcontent.maxMarks/quizcontent.numberOfQuestions}} Marks.</b> No negative Marking for wrong one.</li>
+                        <li>All questions is of MCQ Types.</li>
+                    </ul>
+                    <mat-divider></mat-divider>
+                    <h1 class="text-info">Attempting Quiz</h1>
+                </mat-card-content>
+                <ul>
+                    <li>Click <b>Start Quiz</b> button to start the quiz</li>
+                    <li>The time will start the moment you click the Start Test button</li>
+                    <li>You can not resume this quiz,if interrupted due to any reason.</li>
+                    <li>Scroll down to move to next question.</li>
+                    <li>Click on Submit quiz button on completion of the quiz.</li>
+                    <li>Report of the test is automatically generated in the Form of  PDF copy</li>
+                </ul>
+                <h1 class="text-secondary"> Things to keep in mind.</h1>
+                <ul>
+                    <li>Avoid use of technology gadges <b>(eg.smartphone , smartwatches etc.)</b></li>
+                    <li>talking to someone while attending exam is not allowed. </li>
+                    <li>you can keep a book and pen with you to solve mathematical problem that to you have to show that in camera.</li>
+                    <li>looking all around is prohibited.</li>
+                </ul>
+                <h1 class="text-center text-warning">ALL THE BEST!</h1>
+                <mat-card-actions class="text-center">
+                    <button mat-raised-button color="primary" (click)="submitexam()"> Start Quiz </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+
+<mat-sidenav-container class="sidenav">
+    <mat-sidenav opened="true" >
+      <mat-nav-list class="sidenav">
+        <mat-list-item> <mat-icon>home</mat-icon><a routerLink="userhome" class="mx-0" mat-flat-button> HOME</a></mat-list-item>
+        <mat-list-item><mat-icon>quiz</mat-icon><a [routerLink]="['/user/allquiz']" mat-button class="mx-0">All Quizzes</a></mat-list-item>
+         <mat-list-item><mat-icon>star</mat-icon><button mat-button [mat-menu-trigger-for]="category" class="mx-0">All Categories</button></mat-list-item>
+        <mat-menu #category="matMenu">
+        <a mat-button [routerLink]="['/user/getquiz/'+category.category_id]"  *ngFor="let category of allcat"><span mat-menu-item> <mat-icon>category</mat-icon>{{category.title}}</span></a>
+        </mat-menu>
+        <!-- <mat-list-item *ngFor="let a of allcat"> <mat-icon>category</mat-icon><a [routerLink]="['/user/getquiz/'+a.category_id]" class="mx-0" mat-button> {{a.title}}</a></mat-list-item> -->
+        <mat-list-item><mat-icon>logout</mat-icon><a (click)="logout()">LOGOUT</a></mat-list-item>
+      </mat-nav-list>
+      </mat-sidenav>
+  </mat-sidenav-container>

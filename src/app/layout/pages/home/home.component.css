@@ -1,0 +1,20 @@
+.row{
+    margin-top: 30px;
+    height: 100vh;
+    background-image: url("https://img.freepik.com/free-vector/education-pattern-background-doodle-style_53876-115365.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+}
+.heading{
+    height: 130px;
+    width: 530px;
+    margin-top: 220px;
+    border-radius: 20px;
+    background-color:rgba(110, 97, 97, 0.612);
+}
+span{
+    font-weight: bolder;
+    color:rgb(35, 57, 57);
+}
